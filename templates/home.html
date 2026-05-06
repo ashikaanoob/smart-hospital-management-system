@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+    <h1 class="display-4 fw-bold text-primary">Hospital Management Dashboard</h1>
+    <p class="lead mt-3">Manage doctors, patients, and appointments efficiently.</p>
+    
+    <a href="{% url 'appointment_list' %}" class="btn btn-primary btn-lg mt-3">Get Started</a>
+</div>
+
+<div class="row mt-5 text-center">
+
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm p-4 h-100 border-0">
+            <h2 class="text-primary">{{ doctor_count }}</h2>
+            <h5>Total Doctors</h5>
+            <a href="{% url 'doctor_list' %}" class="btn btn-outline-primary mt-3">Manage Doctors</a>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm p-4 h-100 border-0">
+            <h2 class="text-success">{{ patient_count }}</h2>
+            <h5>Total Patients</h5>
+            <a href="{% url 'patient_list' %}" class="btn btn-outline-success mt-3">Manage Patients</a>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm p-4 h-100 border-0">
+            <h2 class="text-danger">{{ appointment_count }}</h2>
+            <h5>Total Appointments</h5>
+            <a href="{% url 'appointment_list' %}" class="btn btn-outline-danger mt-3">Manage Appointments</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

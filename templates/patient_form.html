@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow p-4">
+        <h2 class="mb-4 text-primary">Patient Form</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label">Patient Name</label>
+                {{ form.name }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Age</label>
+                {{ form.age }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                {{ form.gender }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Phone</label>
+                {{ form.phone }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                {{ form.address }}
+            </div>
+
+            <button type="submit" class="btn btn-success">Save Patient</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
